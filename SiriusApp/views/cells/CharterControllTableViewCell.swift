@@ -9,6 +9,8 @@
 import UIKit
 
 class CharterControllTableViewCell: UITableViewCell {
+    
+    let addButton = ControlCharterUIButton()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +34,14 @@ class CharterControllTableViewCell: UITableViewCell {
     }
     
     func setupLayout(){
+        addButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(addButton)
+        addButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        addButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
+        addButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        addButton.controlLabel.text = "Добавить перелет"
         
     }
 
