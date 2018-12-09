@@ -16,7 +16,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
     let passengerButton = SmallCharterUIButton()
     let departureButton = BigCharterUIButton()
     let arivalButton = BigCharterUIButton()
-    
+    let flipButton = UIButton()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -61,7 +61,16 @@ class CharterSelectionTableViewCell: UITableViewCell {
         timeButton.imageButton.image = UIImage(named: "clocksmall")
         timeButton.smallLabel.text = "Время"
         
-        dateButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+    //    dateButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        
+        dateButton.frame = CGRect(x: 0, y: 0, width: 115, height: 53)
+        let datePath = UIBezierPath(roundedRect: dateButton.bounds,
+                                byRoundingCorners:[ .topLeft, .bottomLeft],
+                                cornerRadii: CGSize(width: 6, height:  6))
+        let dateMaskLayer = CAShapeLayer()
+        dateMaskLayer.path = datePath.cgPath
+        dateButton.layer.mask = dateMaskLayer
+        
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         self.backView.addSubview(dateButton)
         dateButton.rightAnchor.constraint(equalTo: timeButton.leftAnchor, constant: -1).isActive = true
@@ -71,7 +80,16 @@ class CharterSelectionTableViewCell: UITableViewCell {
         dateButton.imageButton.image = UIImage(named: "calendar")
         dateButton.smallLabel.text = "Выбрать дату"
         
-        passengerButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+       // passengerButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        
+        passengerButton.frame = CGRect(x: 0, y: 0, width: 115, height: 53)
+        let  passengerPath = UIBezierPath(roundedRect: passengerButton.bounds,
+                                byRoundingCorners:[ .topRight, .bottomRight],
+                                cornerRadii: CGSize(width: 6, height:  6))
+        let  passengerMaskLayer = CAShapeLayer()
+        passengerMaskLayer.path =  passengerPath.cgPath
+        passengerButton.layer.mask =  passengerMaskLayer
+        
         passengerButton.translatesAutoresizingMaskIntoConstraints = false
         self.backView.addSubview(passengerButton)
         passengerButton.leftAnchor.constraint(equalTo: timeButton.rightAnchor, constant: 1).isActive = true
@@ -82,7 +100,16 @@ class CharterSelectionTableViewCell: UITableViewCell {
         passengerButton.smallLabel.text = "Пассажир"
         
         
-        departureButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+       // departureButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        
+        departureButton.frame = CGRect(x: 0, y: 0, width: 173, height: 127)
+        let  departurePath = UIBezierPath(roundedRect: departureButton.bounds,
+                                          byRoundingCorners:[ .topLeft, .bottomLeft],
+                                          cornerRadii: CGSize(width: 6, height:  6))
+        let  departureMaskLayer = CAShapeLayer()
+        departureMaskLayer.path =  departurePath.cgPath
+        departureButton.layer.mask =  departureMaskLayer
+        
         departureButton.translatesAutoresizingMaskIntoConstraints = false
         self.backView.addSubview(departureButton)
         departureButton.leftAnchor.constraint(equalTo: dateButton.leftAnchor, constant: 0).isActive = true
@@ -91,7 +118,16 @@ class CharterSelectionTableViewCell: UITableViewCell {
         departureButton.widthAnchor.constraint(equalToConstant: 173).isActive = true
         departureButton.bigLabel.text = "Откуда"
         
-        arivalButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        //arivalButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        
+        arivalButton.frame = CGRect(x: 0, y: 0, width: 173, height: 127)
+        let  arivalPath = UIBezierPath(roundedRect: arivalButton.bounds,
+                                          byRoundingCorners:[ .topRight, .bottomRight],
+                                          cornerRadii: CGSize(width: 6, height:  6))
+        let  arivalMaskLayer = CAShapeLayer()
+        arivalMaskLayer.path =  arivalPath.cgPath
+        arivalButton.layer.mask =  arivalMaskLayer
+        
         arivalButton.translatesAutoresizingMaskIntoConstraints = false
         self.backView.addSubview(arivalButton)
         arivalButton.rightAnchor.constraint(equalTo: passengerButton.rightAnchor, constant: 0).isActive = true
@@ -100,6 +136,15 @@ class CharterSelectionTableViewCell: UITableViewCell {
         arivalButton.widthAnchor.constraint(equalToConstant: 173).isActive = true
         arivalButton.bigLabel.text = "Куда"
         
+        
+        flipButton.translatesAutoresizingMaskIntoConstraints = false
+        flipButton.setImage(UIImage(named: "flip"), for: .normal)
+        flipButton.backgroundColor = .clear
+        self.backView.addSubview(flipButton)
+        flipButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+        flipButton.widthAnchor.constraint(equalToConstant: 72).isActive = true
+        flipButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        flipButton.topAnchor.constraint(equalTo: backView.topAnchor, constant: 40).isActive = true
         
         
         

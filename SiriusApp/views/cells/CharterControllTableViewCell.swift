@@ -11,6 +11,8 @@ import UIKit
 class CharterControllTableViewCell: UITableViewCell {
     
     let addButton = ControlCharterUIButton()
+    let backButton = ControlCharterUIButton()
+    let clearButton = ControlCharterUIButton()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +45,26 @@ class CharterControllTableViewCell: UITableViewCell {
         addButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
         addButton.controlLabel.text = "Добавить перелет"
         addButton.imageButton.image = UIImage(named: "plus")
+        
+        backButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(backButton)
+        backButton.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -5).isActive = true
+        backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        backButton.controlLabel.text = "Обратный рейс"
+        backButton.imageButton.image = UIImage(named: "back")
+        
+        clearButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(clearButton)
+        clearButton.leftAnchor.constraint(equalTo: addButton.rightAnchor, constant: 5).isActive = true
+        clearButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
+        clearButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        clearButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        clearButton.controlLabel.text = "Очистить параметры"
+        clearButton.imageButton.image = UIImage(named: "cross")
         
     }
 
