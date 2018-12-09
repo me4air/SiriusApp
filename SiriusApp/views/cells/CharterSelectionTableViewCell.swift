@@ -18,6 +18,9 @@ class CharterSelectionTableViewCell: UITableViewCell {
     let arivalButton = BigCharterUIButton()
     let flipButton = UIButton()
     
+    let smallButtonWidth = Double(UIScreen.main.bounds.width)/3 - 22.5
+    let bigButtonWidth = Double(UIScreen.main.bounds.width)/2 - 33.5
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -57,13 +60,13 @@ class CharterSelectionTableViewCell: UITableViewCell {
         timeButton.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
         timeButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         timeButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
-        timeButton.widthAnchor.constraint(equalToConstant: 115).isActive = true
+        timeButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
         timeButton.imageButton.image = UIImage(named: "clocksmall")
         timeButton.smallLabel.text = "Время"
         
     //    dateButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         
-        dateButton.frame = CGRect(x: 0, y: 0, width: 115, height: 53)
+        dateButton.frame = CGRect(x: 0, y: 0, width: smallButtonWidth, height: 53)
         let datePath = UIBezierPath(roundedRect: dateButton.bounds,
                                 byRoundingCorners:[ .topLeft, .bottomLeft],
                                 cornerRadii: CGSize(width: 6, height:  6))
@@ -76,13 +79,13 @@ class CharterSelectionTableViewCell: UITableViewCell {
         dateButton.rightAnchor.constraint(equalTo: timeButton.leftAnchor, constant: -1).isActive = true
         dateButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         dateButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
-        dateButton.widthAnchor.constraint(equalToConstant: 115).isActive = true
+        dateButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
         dateButton.imageButton.image = UIImage(named: "calendar")
         dateButton.smallLabel.text = "Выбрать дату"
         
        // passengerButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         
-        passengerButton.frame = CGRect(x: 0, y: 0, width: 115, height: 53)
+        passengerButton.frame = CGRect(x: 0, y: 0, width: smallButtonWidth, height: 53)
         let  passengerPath = UIBezierPath(roundedRect: passengerButton.bounds,
                                 byRoundingCorners:[ .topRight, .bottomRight],
                                 cornerRadii: CGSize(width: 6, height:  6))
@@ -95,14 +98,14 @@ class CharterSelectionTableViewCell: UITableViewCell {
         passengerButton.leftAnchor.constraint(equalTo: timeButton.rightAnchor, constant: 1).isActive = true
         passengerButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         passengerButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
-        passengerButton.widthAnchor.constraint(equalToConstant: 115).isActive = true
+        passengerButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
         passengerButton.imageButton.image = UIImage(named: "seat")
         passengerButton.smallLabel.text = "Пассажир"
         
         
        // departureButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         
-        departureButton.frame = CGRect(x: 0, y: 0, width: 173, height: 127)
+        departureButton.frame = CGRect(x: 0, y: 0, width: bigButtonWidth, height: 127)
         let  departurePath = UIBezierPath(roundedRect: departureButton.bounds,
                                           byRoundingCorners:[ .topLeft, .bottomLeft],
                                           cornerRadii: CGSize(width: 6, height:  6))
@@ -115,12 +118,12 @@ class CharterSelectionTableViewCell: UITableViewCell {
         departureButton.leftAnchor.constraint(equalTo: dateButton.leftAnchor, constant: 0).isActive = true
         departureButton.bottomAnchor.constraint(equalTo: dateButton.topAnchor, constant: -1).isActive = true
         departureButton.heightAnchor.constraint(equalToConstant: 127).isActive = true
-        departureButton.widthAnchor.constraint(equalToConstant: 173).isActive = true
+        departureButton.widthAnchor.constraint(equalToConstant: CGFloat(bigButtonWidth)).isActive = true
         departureButton.bigLabel.text = "Откуда"
         
         //arivalButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         
-        arivalButton.frame = CGRect(x: 0, y: 0, width: 173, height: 127)
+        arivalButton.frame = CGRect(x: 0, y: 0, width: bigButtonWidth, height: 127)
         let  arivalPath = UIBezierPath(roundedRect: arivalButton.bounds,
                                           byRoundingCorners:[ .topRight, .bottomRight],
                                           cornerRadii: CGSize(width: 6, height:  6))
@@ -133,7 +136,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         arivalButton.rightAnchor.constraint(equalTo: passengerButton.rightAnchor, constant: 0).isActive = true
         arivalButton.bottomAnchor.constraint(equalTo: passengerButton.topAnchor, constant: -1).isActive = true
         arivalButton.heightAnchor.constraint(equalToConstant: 127).isActive = true
-        arivalButton.widthAnchor.constraint(equalToConstant: 173).isActive = true
+        arivalButton.widthAnchor.constraint(equalToConstant: CGFloat(bigButtonWidth)).isActive = true
         arivalButton.bigLabel.text = "Куда"
         
         

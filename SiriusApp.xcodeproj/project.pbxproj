@@ -90,6 +90,7 @@
 		A055447021A32AC3001A1B4B /* SiriusApp */ = {
 			isa = PBXGroup;
 			children = (
+				A071AC2221B68444006C22D0 /* model */,
 				A0BD405821A35108005062E9 /* views */,
 				A055447121A32AC3001A1B4B /* AppDelegate.swift */,
 				A055447821A32AC5001A1B4B /* Assets.xcassets */,
@@ -130,7 +131,6 @@
 				A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */,
 				A0F4418B21A82E48004AE086 /* ProfileViewController.swift */,
 				A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */,
-				A071AC2221B68444006C22D0 /* model */,
 			);
 			path = views;
 			sourceTree = "<group>";

@@ -13,6 +13,8 @@ class CharterControllTableViewCell: UITableViewCell {
     let addButton = ControlCharterUIButton()
     let backButton = ControlCharterUIButton()
     let clearButton = ControlCharterUIButton()
+    
+    let controlButtonWidth = Double(UIScreen.main.bounds.width)/3 - 24
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +44,7 @@ class CharterControllTableViewCell: UITableViewCell {
         addButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         addButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         addButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        addButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         addButton.controlLabel.text = "Добавить перелет"
         addButton.imageButton.image = UIImage(named: "plus")
         
@@ -52,7 +54,7 @@ class CharterControllTableViewCell: UITableViewCell {
         backButton.rightAnchor.constraint(equalTo: addButton.leftAnchor, constant: -5).isActive = true
         backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        backButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         backButton.controlLabel.text = "Обратный рейс"
         backButton.imageButton.image = UIImage(named: "back")
         
@@ -62,7 +64,7 @@ class CharterControllTableViewCell: UITableViewCell {
         clearButton.leftAnchor.constraint(equalTo: addButton.rightAnchor, constant: 5).isActive = true
         clearButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         clearButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        clearButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
+        clearButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         clearButton.controlLabel.text = "Очистить параметры"
         clearButton.imageButton.image = UIImage(named: "cross")
         

@@ -21,6 +21,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         return button
     }()
     
+
     
     
     
@@ -89,6 +90,9 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         requestButton.widthAnchor.constraint(equalToConstant: self.view.frame.width - 100).isActive = true
         requestButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         requestButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+       
+        
     }
     
     
