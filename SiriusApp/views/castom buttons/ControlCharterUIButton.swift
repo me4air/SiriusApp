@@ -25,11 +25,13 @@ class ControlCharterUIButton: UIButton {
         return label
     }()
     
+    var imageButton = UIImageView()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.layer.cornerRadius = 4
+        self.layer.cornerRadius = 6
         self.layer.borderColor = #colorLiteral(red: 0.6566315889, green: 0.720035255, blue: 0.8156996369, alpha: 1)
         self.layer.borderWidth = 1
         setupLayout()
@@ -47,6 +49,13 @@ class ControlCharterUIButton: UIButton {
         controlLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -9).isActive = true
         controlLabel.widthAnchor.constraint(equalToConstant: 64).isActive = true
         
+        imageButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        imageButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(imageButton)
+        imageButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        imageButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 13).isActive = true
+        imageButton.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        imageButton.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
     }
     /*

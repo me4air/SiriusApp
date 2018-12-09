@@ -99,6 +99,16 @@
 			path = SiriusApp;
 			sourceTree = "<group>";
 		};
+		A05B0A9221BD820F001A8EBF /* castom buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */,
+				A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */,
+				A003478421BD6429008682AD /* SmallCharterUIButton.swift */,
+			);
+			path = "castom buttons";
+			sourceTree = "<group>";
+		};
 		A071AC2221B68444006C22D0 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EF35E621BC70670098376C /* TapBarViewController.swift */,
-				A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */,
-				A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */,
-				A003478421BD6429008682AD /* SmallCharterUIButton.swift */,
+				A05B0A9221BD820F001A8EBF /* castom buttons */,
 				A02FDC6921AB09D9005ACFF1 /* cells */,
 				A0BD405921A3523D005062E9 /* DealsViewController.swift */,
 				A0F4418921A82E35004AE086 /* CharterViewController.swift */,

@@ -42,6 +42,7 @@ class CharterControllTableViewCell: UITableViewCell {
         addButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 112).isActive = true
         addButton.controlLabel.text = "Добавить перелет"
+        addButton.imageButton.image = UIImage(named: "plus")
         
     }
 

@@ -21,19 +21,35 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         charterTableView.delegate = self
         charterTableView.allowsSelection = false
         charterTableView.register(CharterSelectionTableViewCell.self, forCellReuseIdentifier: "cell")
+        charterTableView.register(CharterControllTableViewCell.self, forCellReuseIdentifier: "control")
         setuplayout()
 
         // Do any additional setup after loading the view.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1 }
+        else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = charterTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharterSelectionTableViewCell
-        return cell
+        if indexPath.section == 0 {
+            let cell = charterTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharterSelectionTableViewCell
+            return cell
+            
+        }
+        else {
+            let cell = charterTableView.dequeueReusableCell(withIdentifier: "control", for: indexPath) as! CharterControllTableViewCell
+            return cell
+        }
+
     }
     
     func setuplayout() {
