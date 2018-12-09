@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A003478521BD6429008682AD /* SmallCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003478421BD6429008682AD /* SmallCharterUIButton.swift */; };
+		A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */; };
+		A055447221A32AC3001A1B4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A055447121A32AC3001A1B4B /* AppDelegate.swift */; };
+		A055447921A32AC5001A1B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A055447821A32AC5001A1B4B /* Assets.xcassets */; };
+		A055447C21A32AC5001A1B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */; };
+		A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */; };
+		A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */; };
+		A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */; };
+		A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD405921A3523D005062E9 /* DealsViewController.swift */; };
+		A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C439CA21AC84BF002E1149 /* FlightStruct.swift */; };
+		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
+		A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */; };
+		A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E221BC51490098376C /* RequestViewController.swift */; };
+		A0EF35E521BC6FD10098376C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */; };
+		A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E621BC70670098376C /* TapBarViewController.swift */; };
+		A0F4418A21A82E35004AE086 /* CharterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4418921A82E35004AE086 /* CharterViewController.swift */; };
+		A0F4418C21A82E48004AE086 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4418B21A82E48004AE086 /* ProfileViewController.swift */; };
+		A0F4418E21A82E53004AE086 /* NotifecationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A003478421BD6429008682AD /* SmallCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCharterUIButton.swift; sourceTree = "<group>"; };
+		A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A055446E21A32AC3001A1B4B /* SiriusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiriusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A055447121A32AC3001A1B4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A055447821A32AC5001A1B4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A055447B21A32AC5001A1B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A055447D21A32AC5001A1B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCharterUIButton.swift; sourceTree = "<group>"; };
+		A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCharterUIButton.swift; sourceTree = "<group>"; };
+		A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterControllTableViewCell.swift; sourceTree = "<group>"; };
+		A0BD405921A3523D005062E9 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
+		A0C439CA21AC84BF002E1149 /* FlightStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStruct.swift; sourceTree = "<group>"; };
+		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDealViewController.swift; sourceTree = "<group>"; };
+		A0EF35E221BC51490098376C /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		A0EF35E621BC70670098376C /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
+		A0F4418921A82E35004AE086 /* CharterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterViewController.swift; sourceTree = "<group>"; };
+		A0F4418B21A82E48004AE086 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifecationsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A055446B21A32AC3001A1B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A02FDC6921AB09D9005ACFF1 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */,
+				A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */,
+				A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		A055446521A32AC3001A1B4B = {
+			isa = PBXGroup;
+			children = (
+				A055447021A32AC3001A1B4B /* SiriusApp */,
+				A055446F21A32AC3001A1B4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A055446F21A32AC3001A1B4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A055446E21A32AC3001A1B4B /* SiriusApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A055447021A32AC3001A1B4B /* SiriusApp */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD405821A35108005062E9 /* views */,
+				A055447121A32AC3001A1B4B /* AppDelegate.swift */,
+				A055447821A32AC5001A1B4B /* Assets.xcassets */,
+				A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */,
+				A055447D21A32AC5001A1B4B /* Info.plist */,
+			);
+			path = SiriusApp;
+			sourceTree = "<group>";
+		};
+		A071AC2221B68444006C22D0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A0C439CA21AC84BF002E1149 /* FlightStruct.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A0BD405821A35108005062E9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF35E621BC70670098376C /* TapBarViewController.swift */,
+				A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */,
+				A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */,
+				A003478421BD6429008682AD /* SmallCharterUIButton.swift */,
+				A02FDC6921AB09D9005ACFF1 /* cells */,
+				A0BD405921A3523D005062E9 /* DealsViewController.swift */,
+				A0F4418921A82E35004AE086 /* CharterViewController.swift */,
+				A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */,
+				A0EF35E221BC51490098376C /* RequestViewController.swift */,
+				A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */,
+				A0F4418B21A82E48004AE086 /* ProfileViewController.swift */,
+				A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */,
+				A071AC2221B68444006C22D0 /* model */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A055446D21A32AC3001A1B4B /* SiriusApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A055448021A32AC5001A1B4B /* Build configuration list for PBXNativeTarget "SiriusApp" */;
+			buildPhases = (
+				A055446A21A32AC3001A1B4B /* Sources */,
+				A055446B21A32AC3001A1B4B /* Frameworks */,
+				A055446C21A32AC3001A1B4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiriusApp;
+			productName = SiriusApp;
+			productReference = A055446E21A32AC3001A1B4B /* SiriusApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A055446621A32AC3001A1B4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = me4air;
+				TargetAttributes = {
+					A055446D21A32AC3001A1B4B = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = A055446921A32AC3001A1B4B /* Build configuration list for PBXProject "SiriusApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A055446521A32AC3001A1B4B;
+			productRefGroup = A055446F21A32AC3001A1B4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A055446D21A32AC3001A1B4B /* SiriusApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A055446C21A32AC3001A1B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A055447C21A32AC5001A1B4B /* LaunchScreen.storyboard in Resources */,
+				A055447921A32AC5001A1B4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A055446A21A32AC3001A1B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */,
+				A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */,
+				A0EF35E521BC6FD10098376C /* WelcomeViewController.swift in Sources */,
+				A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */,
+				A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */,
+				A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */,
+				A003478521BD6429008682AD /* SmallCharterUIButton.swift in Sources */,
+				A0F4418E21A82E53004AE086 /* NotifecationsViewController.swift in Sources */,
+				A055447221A32AC3001A1B4B /* AppDelegate.swift in Sources */,
+				A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */,
+				A0F4418C21A82E48004AE086 /* ProfileViewController.swift in Sources */,
+				A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */,
+				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
+				A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */,
+				A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */,
+				A0F4418A21A82E35004AE086 /* CharterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A055447B21A32AC5001A1B4B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A055447E21A32AC5001A1B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A055447F21A32AC5001A1B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A055448121A32AC5001A1B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N92YQJ4YN3;
+				INFOPLIST_FILE = SiriusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.me4air.SiriusApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A055448221A32AC5001A1B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N92YQJ4YN3;
+				INFOPLIST_FILE = SiriusApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.me4air.SiriusApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A055446921A32AC3001A1B4B /* Build configuration list for PBXProject "SiriusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A055447E21A32AC5001A1B4B /* Debug */,
+				A055447F21A32AC5001A1B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A055448021A32AC5001A1B4B /* Build configuration list for PBXNativeTarget "SiriusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A055448121A32AC5001A1B4B /* Debug */,
+				A055448221A32AC5001A1B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A055446621A32AC3001A1B4B /* Project object */;
+}
