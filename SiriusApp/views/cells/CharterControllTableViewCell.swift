@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol CharterControllTableViewCellDelegate : class {
+    func CharterControllTableViewCellDidTapAddButton(_ sender: CharterControllTableViewCell)
+    func CharterControllTableViewCellDidTapBackButton(_ sender: CharterControllTableViewCell)
+    func CharterControllTableViewCellDidTapClearButton(_ sender: CharterControllTableViewCell)
+}
+
 class CharterControllTableViewCell: UITableViewCell {
     
     let addButton = ControlCharterUIButton()
     let backButton = ControlCharterUIButton()
     let clearButton = ControlCharterUIButton()
+    
+    weak var delegate: CharterControllTableViewCellDelegate?
     
     let controlButtonWidth = Double(UIScreen.main.bounds.width)/3 - 24
 
@@ -37,6 +45,23 @@ class CharterControllTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    @objc func addButtonAction(sender: UIButton!) {
+        delegate?.CharterControllTableViewCellDidTapAddButton(self)
+        
+    }
+    
+    @objc func backButtonAction(sender: UIButton!) {
+         delegate?.CharterControllTableViewCellDidTapBackButton(self)
+    }
+    
+    @objc func clearButtonAction(sender: UIButton!) {
+        delegate?.CharterControllTableViewCellDidTapClearButton(self)
+    }
+    
+    
+    
+    
     func setupLayout(){
         addButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         addButton.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +73,9 @@ class CharterControllTableViewCell: UITableViewCell {
         addButton.controlLabel.text = "Добавить перелет"
         addButton.imageButton.image = UIImage(named: "plus")
         
+        addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
+        
+        
         backButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         backButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(backButton)
@@ -58,6 +86,8 @@ class CharterControllTableViewCell: UITableViewCell {
         backButton.controlLabel.text = "Обратный рейс"
         backButton.imageButton.image = UIImage(named: "back")
         
+        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+        
         clearButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0 )
         clearButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(clearButton)
@@ -67,6 +97,8 @@ class CharterControllTableViewCell: UITableViewCell {
         clearButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         clearButton.controlLabel.text = "Очистить параметры"
         clearButton.imageButton.image = UIImage(named: "cross")
+        
+       clearButton.addTarget(self, action: #selector(clearButtonAction), for: .touchUpInside)
         
     }
 

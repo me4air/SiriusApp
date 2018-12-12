@@ -10,7 +10,7 @@ import UIKit
 
 class SmallCharterUIButton: UIButton {
     
-    var smallLabel: UILabel = {
+    /*var smallLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -23,7 +23,24 @@ class SmallCharterUIButton: UIButton {
         label.sizeToFit()
         label.text = ""
         return label
+    }()*/
+    
+    var smallLabel: UITextField = {
+        let label = UITextField()
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      //  label.numberOfLines = 1
+     //   label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .left
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
+        label.contentScaleFactor = 0.2
+        label.sizeToFit()
+        label.text = ""
+        label.isUserInteractionEnabled = false
+        return label
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
