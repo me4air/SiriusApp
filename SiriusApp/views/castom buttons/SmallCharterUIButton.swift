@@ -55,6 +55,7 @@ class SmallCharterUIButton: UIButton {
     }
     
     func setupLayout() {
+        self.backgroundColor = #colorLiteral(red: 0.0862745098, green: 0.3607843137, blue: 0.6, alpha: 1)
         self.addSubview(smallLabel)
         smallLabel.translatesAutoresizingMaskIntoConstraints = false
         smallLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

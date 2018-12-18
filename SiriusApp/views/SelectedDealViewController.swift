@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectedDealViewController: UIViewController {
+class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
     
     let scrollView : UIScrollView = {
         let view = UIScrollView()
@@ -18,11 +18,16 @@ class SelectedDealViewController: UIViewController {
         return view
     }()
     
-    let sliderView = UIView()
     
     let imageSeparator = UIImageView()
     
     let clockImage = UIImageView()
+    
+    let sliderPageController = UIPageControl()
+    let sliderScrollView = UIScrollView()
+    var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    
+    let imageArray = ["plane","plane2","plane3"]
     
     
     
@@ -400,6 +405,11 @@ class SelectedDealViewController: UIViewController {
         navigationController?.pushViewController(svc, animated: true)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = sliderScrollView.contentOffset.x / sliderScrollView.frame.size.width
+        sliderPageController.currentPage = Int(pageNumber)
+    }
+    
     
     func setupScrollView(){
         view.addSubview(scrollView)
@@ -407,8 +417,6 @@ class SelectedDealViewController: UIViewController {
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-       // scrollView.delegate = self
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 90)
@@ -420,21 +428,41 @@ class SelectedDealViewController: UIViewController {
         ]
         scrollView.layer.addSublayer(gradientLayer)
         
-        sliderView.frame = CGRect(x: 0, y: 0, width: view.frame.width-30, height: 200)
-        let path = UIBezierPath(roundedRect:sliderView.bounds,
-                                byRoundingCorners:[ .topLeft, .bottomRight],
-                                cornerRadii: CGSize(width: 10, height:  10))
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = path.cgPath
-        sliderView.layer.mask = maskLayer
-        sliderView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        sliderScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width-30, height: 200)
+        sliderScrollView.backgroundColor = UIColor.clear
+        sliderScrollView.isPagingEnabled = true
+        for index in 0..<imageArray.count {
+            frame.origin.x = sliderScrollView.frame.width * CGFloat(index)
+            frame.size = sliderScrollView.frame.size
+            let imageView = UIImageView(frame: frame)
+            imageView.image = UIImage(named: imageArray[index])
+            let path = UIBezierPath(roundedRect:sliderScrollView.bounds,
+                                    byRoundingCorners:[ .topLeft, .bottomRight],
+                                    cornerRadii: CGSize(width: 10, height:  10))
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = path.cgPath
+            imageView.layer.mask = maskLayer
+            self.sliderScrollView.addSubview(imageView)
+        }
+        sliderScrollView.contentSize = CGSize(width: sliderScrollView.frame.size.width * CGFloat(imageArray.count), height: sliderScrollView.frame.size.height)
+        sliderScrollView.delegate = self
         
-        scrollView.addSubview(sliderView)
-        sliderView.translatesAutoresizingMaskIntoConstraints = false
-        sliderView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
-        sliderView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        sliderView.widthAnchor.constraint(equalToConstant: self.view.frame.width-30).isActive = true
-        sliderView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        scrollView.addSubview(sliderScrollView)
+        sliderScrollView.translatesAutoresizingMaskIntoConstraints = false
+        sliderScrollView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
+        sliderScrollView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        sliderScrollView.widthAnchor.constraint(equalToConstant: self.view.frame.width-30).isActive = true
+        sliderScrollView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        
+        
+        sliderPageController.numberOfPages = imageArray.count
+        sliderPageController.pageIndicatorTintColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
+        sliderPageController.isUserInteractionEnabled = false
+        scrollView.addSubview(sliderPageController)
+        sliderPageController.translatesAutoresizingMaskIntoConstraints = false
+        sliderPageController.bottomAnchor.constraint(equalTo: sliderScrollView.bottomAnchor, constant: -20).isActive = true
+        sliderPageController.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        
         
         
         scrollView.addSubview(leftBorderView)
@@ -612,7 +640,7 @@ class SelectedDealViewController: UIViewController {
         byButton.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
         byButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         byButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-
+        
         
     }
     

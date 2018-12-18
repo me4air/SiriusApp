@@ -53,8 +53,15 @@ class TapBarViewController: UITabBarController {
         charterNavigationController.navigationBar.titleTextAttributes = textAttributes
         charterNavigationController.navigationBar.barStyle = .black
         
+        let notificationNavigationController = UINavigationController(rootViewController: notificationsViewController)
+        notificationNavigationController.navigationBar.prefersLargeTitles = true
+        notificationNavigationController.navigationBar.barTintColor = #colorLiteral(red: 0.07843137255, green: 0.2039215686, blue: 0.3607843137, alpha: 1)
+        notificationNavigationController.navigationBar.largeTitleTextAttributes = textAttributes
+        notificationNavigationController.navigationBar.titleTextAttributes = textAttributes
+        notificationNavigationController.navigationBar.barStyle = .black
         
-        let controllers = [/*dealsViewController */dealsNavigationController,/*charterViewController*/charterNavigationController,notificationsViewController,profileViewController]
+        
+        let controllers = [/*dealsViewController */dealsNavigationController,/*charterViewController*/charterNavigationController, notificationNavigationController/*notificationsViewController*/,profileViewController]
         
         self.viewControllers = controllers
         

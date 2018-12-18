@@ -84,6 +84,28 @@ class CharterSelectionTableViewCell: UITableViewCell {
         
     }
     
+    func resetTime(){
+        timeButton.smallLabel.text = "Время"
+        timeButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+        timeButton.backgroundColor = #colorLiteral(red: 0.0862745098, green: 0.3607843137, blue: 0.6, alpha: 1)
+        timeButton.smallLabel.isUserInteractionEnabled = false
+    }
+    
+    func resetDate(){
+        dateButton.smallLabel.text = "Выбрать дату"
+        dateButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+        dateButton.backgroundColor = #colorLiteral(red: 0.0862745098, green: 0.3607843137, blue: 0.6, alpha: 1)
+        dateButton.smallLabel.isUserInteractionEnabled = false
+    }
+    
+    func resetPass(){
+        passengerButton.smallLabel.text = "Пассажир"
+        passengerButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+        passengerButton.backgroundColor = #colorLiteral(red: 0.0862745098, green: 0.3607843137, blue: 0.6, alpha: 1)
+        passengerButton.smallLabel.isUserInteractionEnabled = false
+    }
+    
+    
     func setupLayout() {
         
         backView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -103,7 +125,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         timeButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         timeButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
         timeButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
-        timeButton.imageButton.image = UIImage(named: "clocksmall")
+        timeButton.imageButton.image = UIImage(named: "clocksmall")!.withRenderingMode(.alwaysTemplate)
         timeButton.smallLabel.text = "Время"
         
         timeButton.addTarget(self, action: #selector(timeButtonAction), for: .touchUpInside)
@@ -124,7 +146,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         dateButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         dateButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
         dateButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
-        dateButton.imageButton.image = UIImage(named: "calendar")
+        dateButton.imageButton.image = UIImage(named: "calendar")!.withRenderingMode(.alwaysTemplate)
         dateButton.smallLabel.text = "Выбрать дату"
         
        dateButton.addTarget(self, action: #selector(dateButtonAction), for: .touchUpInside)
@@ -145,7 +167,9 @@ class CharterSelectionTableViewCell: UITableViewCell {
         passengerButton.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -20).isActive = true
         passengerButton.heightAnchor.constraint(equalToConstant: 53).isActive = true
         passengerButton.widthAnchor.constraint(equalToConstant: CGFloat(smallButtonWidth)).isActive = true
-        passengerButton.imageButton.image = UIImage(named: "seat")
+        passengerButton.imageButton.image = UIImage(named: "seat")?.withRenderingMode(.alwaysTemplate)
+  
+        
         passengerButton.smallLabel.text = "Пассажир"
         
         
@@ -166,7 +190,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         departureButton.heightAnchor.constraint(equalToConstant: 127).isActive = true
         departureButton.widthAnchor.constraint(equalToConstant: CGFloat(bigButtonWidth)).isActive = true
         departureButton.bigLabel.text = "Откуда"
-        
+        departureButton.buttonSide = .left
         departureButton.addTarget(self, action: #selector(departureButtonAction), for: .touchUpInside)
         
         
@@ -186,7 +210,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         arivalButton.heightAnchor.constraint(equalToConstant: 127).isActive = true
         arivalButton.widthAnchor.constraint(equalToConstant: CGFloat(bigButtonWidth)).isActive = true
         arivalButton.bigLabel.text = "Куда"
-        
+        arivalButton.buttonSide = .right
         arivalButton.addTarget(self, action: #selector(arivalButtonAction), for: .touchUpInside)
         
         

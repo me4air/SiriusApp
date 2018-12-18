@@ -31,8 +31,10 @@ class CharterControllTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupLayout()
+        disactivateClear()
+        disactivateAdd()
+        disactivateBack()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +62,43 @@ class CharterControllTableViewCell: UITableViewCell {
     }
     
     
+    func activateAdd(){
+    self.addButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+    self.addButton.controlLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+    self.addButton.isEnabled = true
+    }
+    
+    func disactivateAdd(){
+        self.addButton.imageButton.tintColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.addButton.controlLabel.textColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.addButton.isEnabled = false
+    }
+    
+    func activateBack(){
+        self.backButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+        self.backButton.controlLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+        self.backButton.isEnabled = true
+    }
+    
+    func disactivateBack(){
+        self.backButton.imageButton.tintColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.backButton.controlLabel.textColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.backButton.isEnabled = false
+    }
+    
+    func activateClear(){
+        self.clearButton.imageButton.tintColor = #colorLiteral(red: 0.003921568627, green: 0.6156862745, blue: 0.968627451, alpha: 1)
+        self.clearButton.controlLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+        self.clearButton.isEnabled = true
+    }
+    
+    func disactivateClear(){
+        self.clearButton.imageButton.tintColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.clearButton.controlLabel.textColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
+        self.clearButton.isEnabled = false
+    }
+    
+    
     
     
     func setupLayout(){
@@ -71,7 +110,7 @@ class CharterControllTableViewCell: UITableViewCell {
         addButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         addButton.controlLabel.text = "Добавить перелет"
-        addButton.imageButton.image = UIImage(named: "plus")
+        addButton.imageButton.image = UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate)
         
         addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
         
@@ -84,7 +123,7 @@ class CharterControllTableViewCell: UITableViewCell {
         backButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
         backButton.controlLabel.text = "Обратный рейс"
-        backButton.imageButton.image = UIImage(named: "back")
+        backButton.imageButton.image = UIImage(named: "back")?.withRenderingMode(.alwaysTemplate)
         
         backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         
@@ -95,8 +134,8 @@ class CharterControllTableViewCell: UITableViewCell {
         clearButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         clearButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
         clearButton.widthAnchor.constraint(equalToConstant: CGFloat(controlButtonWidth)).isActive = true
-        clearButton.controlLabel.text = "Очистить параметры"
-        clearButton.imageButton.image = UIImage(named: "cross")
+        clearButton.controlLabel.text = "Удалить перелет"
+        clearButton.imageButton.image = UIImage(named: "cross")?.withRenderingMode(.alwaysTemplate)
         
        clearButton.addTarget(self, action: #selector(clearButtonAction), for: .touchUpInside)
         

@@ -12,11 +12,15 @@ class NotifecationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
 
         // Do any additional setup after loading the view.
     }
     
 
+    override func viewDidAppear(_ animated: Bool) {
+          self.tabBarItem.badgeValue = "3"
+    }
     /*
     // MARK: - Navigation
 

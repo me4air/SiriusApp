@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A003478521BD6429008682AD /* SmallCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003478421BD6429008682AD /* SmallCharterUIButton.swift */; };
+		A01D157D21C68CEC00E0BD56 /* AirportSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */; };
 		A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */; };
+		A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */; };
+		A050C2EC21C6B012004FC630 /* AirportStruckt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A050C2EB21C6B012004FC630 /* AirportStruckt.swift */; };
 		A055447221A32AC3001A1B4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A055447121A32AC3001A1B4B /* AppDelegate.swift */; };
 		A055447921A32AC5001A1B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A055447821A32AC5001A1B4B /* Assets.xcassets */; };
 		A055447C21A32AC5001A1B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */; };
 		A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */; };
 		A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */; };
 		A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */; };
+		A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */; };
 		A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD405921A3523D005062E9 /* DealsViewController.swift */; };
 		A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C439CA21AC84BF002E1149 /* FlightStruct.swift */; };
 		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
@@ -29,7 +33,10 @@
 
 /* Begin PBXFileReference section */
 		A003478421BD6429008682AD /* SmallCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCharterUIButton.swift; sourceTree = "<group>"; };
+		A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchViewController.swift; sourceTree = "<group>"; };
 		A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airportSearchTableViewCell.swift; sourceTree = "<group>"; };
+		A050C2EB21C6B012004FC630 /* AirportStruckt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportStruckt.swift; sourceTree = "<group>"; };
 		A055446E21A32AC3001A1B4B /* SiriusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiriusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A055447121A32AC3001A1B4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A055447821A32AC5001A1B4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCharterUIButton.swift; sourceTree = "<group>"; };
 		A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCharterUIButton.swift; sourceTree = "<group>"; };
 		A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterControllTableViewCell.swift; sourceTree = "<group>"; };
+		A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterStruckt.swift; sourceTree = "<group>"; };
 		A0BD405921A3523D005062E9 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		A0C439CA21AC84BF002E1149 /* FlightStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStruct.swift; sourceTree = "<group>"; };
 		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */,
+				A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */,
 				A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */,
 				A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */,
 			);
@@ -114,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				A0C439CA21AC84BF002E1149 /* FlightStruct.swift */,
+				A050C2EB21C6B012004FC630 /* AirportStruckt.swift */,
+				A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 				A0F4418921A82E35004AE086 /* CharterViewController.swift */,
 				A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */,
 				A0EF35E221BC51490098376C /* RequestViewController.swift */,
+				A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */,
 				A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */,
 				A0F4418B21A82E48004AE086 /* ProfileViewController.swift */,
 				A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */,
@@ -205,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A050C2EC21C6B012004FC630 /* AirportStruckt.swift in Sources */,
 				A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */,
 				A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */,
 				A0EF35E521BC6FD10098376C /* WelcomeViewController.swift in Sources */,
@@ -215,9 +228,12 @@
 				A0F4418E21A82E53004AE086 /* NotifecationsViewController.swift in Sources */,
 				A055447221A32AC3001A1B4B /* AppDelegate.swift in Sources */,
 				A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */,
+				A01D157D21C68CEC00E0BD56 /* AirportSearchViewController.swift in Sources */,
 				A0F4418C21A82E48004AE086 /* ProfileViewController.swift in Sources */,
+				A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */,
 				A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */,
 				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
+				A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */,
 				A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */,
 				A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */,
 				A0F4418A21A82E35004AE086 /* CharterViewController.swift in Sources */,
@@ -242,6 +258,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -303,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
