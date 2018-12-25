@@ -358,6 +358,8 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         controlCell.disactivateClear()
         controlCell.disactivateAdd()
         controlCell.disactivateBack()
+        requestButton.isEnabled = false
+        requestButton.backgroundColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
         self.charterTableView.reloadData()
     }
     

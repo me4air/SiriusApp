@@ -19,6 +19,9 @@
 		A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */; };
 		A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */; };
 		A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */; };
+		A0A79E4221CFA7EB00ED7E95 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A79E4121CFA7EB00ED7E95 /* NotificationTableViewCell.swift */; };
+		A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */; };
+		A0B5192821CFF39200D833EF /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */; };
 		A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD405921A3523D005062E9 /* DealsViewController.swift */; };
 		A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C439CA21AC84BF002E1149 /* FlightStruct.swift */; };
 		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
@@ -46,6 +49,9 @@
 		A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCharterUIButton.swift; sourceTree = "<group>"; };
 		A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterControllTableViewCell.swift; sourceTree = "<group>"; };
 		A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterStruckt.swift; sourceTree = "<group>"; };
+		A0A79E4121CFA7EB00ED7E95 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStruct.swift; sourceTree = "<group>"; };
+		A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A0BD405921A3523D005062E9 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		A0C439CA21AC84BF002E1149 /* FlightStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStruct.swift; sourceTree = "<group>"; };
 		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,9 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */,
+				A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */,
 				A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */,
 				A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */,
 				A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */,
+				A0A79E4121CFA7EB00ED7E95 /* NotificationTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A0C439CA21AC84BF002E1149 /* FlightStruct.swift */,
+				A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */,
 				A050C2EB21C6B012004FC630 /* AirportStruckt.swift */,
 				A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */,
 			);
@@ -217,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A79E4221CFA7EB00ED7E95 /* NotificationTableViewCell.swift in Sources */,
 				A050C2EC21C6B012004FC630 /* AirportStruckt.swift in Sources */,
+				A0B5192821CFF39200D833EF /* ProfileTableViewCell.swift in Sources */,
 				A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */,
 				A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */,
 				A0EF35E521BC6FD10098376C /* WelcomeViewController.swift in Sources */,
@@ -233,6 +244,7 @@
 				A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */,
 				A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */,
 				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
+				A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */,
 				A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */,
 				A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */,
 				A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */,
@@ -306,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -362,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

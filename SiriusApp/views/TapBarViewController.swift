@@ -35,6 +35,8 @@ class TapBarViewController: UITabBarController {
         notificationsViewController.tabBarItem = UITabBarItem(title: "Уведомления", image: UIImage(named: "Notifications"), tag: 2)
         profileViewController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "Profile"), tag: 3)
         
+        notificationsViewController.tabBarItem.badgeValue = "5"
+        
         
         // tabBarController.viewControllers = controllers
         
@@ -60,8 +62,16 @@ class TapBarViewController: UITabBarController {
         notificationNavigationController.navigationBar.titleTextAttributes = textAttributes
         notificationNavigationController.navigationBar.barStyle = .black
         
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        profileNavigationController.navigationBar.prefersLargeTitles = true
+        profileViewController.navigationController?.isNavigationBarHidden = true
+        profileNavigationController.navigationBar.barTintColor = #colorLiteral(red: 0.07843137255, green: 0.2039215686, blue: 0.3607843137, alpha: 1)
+        profileNavigationController.navigationBar.largeTitleTextAttributes = textAttributes
+        profileNavigationController.navigationBar.titleTextAttributes = textAttributes
+        profileNavigationController.navigationBar.barStyle = .black
         
-        let controllers = [/*dealsViewController */dealsNavigationController,/*charterViewController*/charterNavigationController, notificationNavigationController/*notificationsViewController*/,profileViewController]
+        
+        let controllers = [/*dealsViewController */dealsNavigationController,/*charterViewController*/charterNavigationController, notificationNavigationController/*notificationsViewController*/, profileNavigationController/*profileViewController*/]
         
         self.viewControllers = controllers
         
