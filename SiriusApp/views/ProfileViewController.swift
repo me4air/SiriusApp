@@ -32,22 +32,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return label
     }()
     
-    let photoButton: UIButton = {
+ /*   let photoButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "photo"), for: .normal)
         button.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         return button
-    }()
+    }() */
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupLayout()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateWithRealm()
+        navigationController?.isNavigationBarHidden = true
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -68,8 +70,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
          print("2")
         case 3:
          print("3")
+         let svc = UserDataRegistrationViewController()
+         svc.title = "Изменить профиль"
+         navigationController?.pushViewController(svc, animated: true)
         case 4:
          print("4")
+         let svc = AboutViewController()
+         svc.title = "О SiriusAero"
+         navigationController?.pushViewController(svc, animated: true)
         case 5:
          print("5")
         self.view.window?.rootViewController!.dismiss(animated: true, completion: nil)
@@ -110,7 +118,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    @objc func photoAction(sender: UIButton!) {
+  /*  @objc func photoAction(sender: UIButton!) {
         
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -144,7 +152,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
+    } */
     
     
     func updateWithRealm(){
@@ -165,7 +173,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let name = userData?.name {
             userNameLabel.text = name + " " + (userData?.surName)!
         }
-    }
+    } 
     
     func setupLayout(){
         
@@ -192,7 +200,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         profileAvatarImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         profileAvatarImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        photoButton.translatesAutoresizingMaskIntoConstraints = false
+    /*  photoButton.translatesAutoresizingMaskIntoConstraints = false
         photoButton.layer.cornerRadius = 18
         photoButton.clipsToBounds = true
         self.view.addSubview(photoButton)
@@ -201,6 +209,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         photoButton.bottomAnchor.constraint(equalTo: profileAvatarImage.bottomAnchor).isActive = true
         photoButton.rightAnchor.constraint(equalTo: profileAvatarImage.rightAnchor).isActive = true
         photoButton.addTarget(self, action: #selector(photoAction), for: .touchUpInside)
+        */
         
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(userNameLabel)

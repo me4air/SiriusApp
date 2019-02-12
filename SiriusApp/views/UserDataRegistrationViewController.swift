@@ -47,7 +47,7 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
     
     
     let termsSwitch = UISwitch()
-    
+
     var textView: UITextView = {
         let label = UITextView()
         label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
@@ -88,7 +88,7 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.isNavigationBarHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -177,10 +177,8 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
     
     @objc func nextButtonAction(sender: UIButton!) {
         
-       
-       
         let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let imageData =  (self.cyrcleImageView.image?.jpegData(compressionQuality: 0.2))
+        let imageData =  (self.cyrcleImageView.image?.jpegData(compressionQuality: 0))
         let user = UserData()
         user.name = self.nameTextField.text!
         user.surName = self.surnameTextField.text!
@@ -350,7 +348,6 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
         surnameTextField.widthAnchor.constraint(equalToConstant: self.view.frame.width-100).isActive = true
         surnameTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-      
         textView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(textView)
         textView.leftAnchor.constraint(equalTo: surnameTextField.leftAnchor).isActive = true
@@ -375,9 +372,6 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
         nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nextButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 65).isActive = true
         nextButton.addTarget(self, action: #selector(nextButtonAction), for: .touchUpInside)
-      
-        
-    
         
     }
     

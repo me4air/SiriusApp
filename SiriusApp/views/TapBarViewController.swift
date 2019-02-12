@@ -63,7 +63,7 @@ class TapBarViewController: UITabBarController {
         notificationNavigationController.navigationBar.barStyle = .black
         
         let profileNavigationController = UINavigationController(rootViewController: profileViewController)
-        profileNavigationController.navigationBar.prefersLargeTitles = true
+        profileNavigationController.navigationBar.prefersLargeTitles = false
         profileViewController.navigationController?.isNavigationBarHidden = true
         profileNavigationController.navigationBar.barTintColor = #colorLiteral(red: 0.07843137255, green: 0.2039215686, blue: 0.3607843137, alpha: 1)
         profileNavigationController.navigationBar.largeTitleTextAttributes = textAttributes

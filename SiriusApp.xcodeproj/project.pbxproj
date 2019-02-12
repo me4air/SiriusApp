@@ -34,6 +34,7 @@
 		A0D21C6B22117988005A5B37 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C6A22117988005A5B37 /* UserData.swift */; };
 		A0D21C6F22119206005A5B37 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C6E22119206005A5B37 /* EnterViewController.swift */; };
 		A0D21C7122119644005A5B37 /* RePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C7022119644005A5B37 /* RePassViewController.swift */; };
+		A0D21C852212D744005A5B37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C842212D744005A5B37 /* AboutViewController.swift */; };
 		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
 		A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */; };
 		A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E221BC51490098376C /* RequestViewController.swift */; };
@@ -76,6 +77,7 @@
 		A0D21C6A22117988005A5B37 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A0D21C6E22119206005A5B37 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		A0D21C7022119644005A5B37 /* RePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePassViewController.swift; sourceTree = "<group>"; };
+		A0D21C842212D744005A5B37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDealViewController.swift; sourceTree = "<group>"; };
 		A0EF35E221BC51490098376C /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				A0083F1822045245002D0CE6 /* RegistrationViewController.swift */,
 				A074FA3E22115683003ECBCB /* UserDataRegistrationViewController.swift */,
 				A0F4418B21A82E48004AE086 /* ProfileViewController.swift */,
+				A0D21C842212D744005A5B37 /* AboutViewController.swift */,
 				A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */,
 			);
 			path = views;
@@ -356,6 +359,7 @@
 				A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */,
 				A074FA3F22115683003ECBCB /* UserDataRegistrationViewController.swift in Sources */,
 				A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */,
+				A0D21C852212D744005A5B37 /* AboutViewController.swift in Sources */,
 				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
 				A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */,
 				A065BAE22209AD1500148067 /* FilterViewController.swift in Sources */,
