@@ -499,21 +499,36 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate, UIPick
         ]
         scrollView.layer.addSublayer(gradientLayer)
         
-        sliderScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width-30, height: 200)
+        sliderScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 200)
         sliderScrollView.backgroundColor = UIColor.clear
         sliderScrollView.isPagingEnabled = true
         for index in 0..<imageArray.count {
+            let backView = UIView()
+            backView.backgroundColor = UIColor.clear
             frame.origin.x = sliderScrollView.frame.width * CGFloat(index)
             frame.size = sliderScrollView.frame.size
-            let imageView = UIImageView(frame: frame)
+            backView.frame = frame
+           // let imageView = UIImageView(frame: frame)
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width-30, height: frame.height))
+            imageView.contentMode = .scaleAspectFill
+            self.sliderScrollView.addSubview(backView)
             imageView.image = UIImage(named: imageArray[index])
-            let path = UIBezierPath(roundedRect:sliderScrollView.bounds,
+            let path = UIBezierPath(roundedRect:imageView.bounds,
                                     byRoundingCorners:[ .topLeft, .bottomRight],
                                     cornerRadii: CGSize(width: 10, height:  10))
             let maskLayer = CAShapeLayer()
             maskLayer.path = path.cgPath
+            backView.addSubview(imageView)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.centerXAnchor.constraint(equalTo: backView.centerXAnchor).isActive = true
+            imageView.centerYAnchor.constraint(equalTo: backView.centerYAnchor).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: frame.height).isActive = true
+            imageView.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 15).isActive = true
+            imageView.rightAnchor.constraint(equalTo: backView.rightAnchor, constant: -15).isActive = true
+            //imageView.widthAnchor.constraint(equalToConstant: frame.width-30).isActive = true
             imageView.layer.mask = maskLayer
-            self.sliderScrollView.addSubview(imageView)
+            
+            //self.sliderScrollView.addSubview(imageView)
         }
         sliderScrollView.contentSize = CGSize(width: sliderScrollView.frame.size.width * CGFloat(imageArray.count), height: sliderScrollView.frame.size.height)
         sliderScrollView.delegate = self
@@ -522,7 +537,7 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate, UIPick
         sliderScrollView.translatesAutoresizingMaskIntoConstraints = false
         sliderScrollView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
         sliderScrollView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        sliderScrollView.widthAnchor.constraint(equalToConstant: self.view.frame.width-30).isActive = true
+        sliderScrollView.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         sliderScrollView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         
         

@@ -20,7 +20,7 @@ class TapBarViewController: UITabBarController {
         
         let charterViewController = CharterViewController() as UIViewController
         charterViewController.view.backgroundColor = UIColor.white
-        charterViewController.title = "Charter"
+        charterViewController.title = "Чартер"
         
         let notificationsViewController = NotifecationsViewController() as UIViewController
         notificationsViewController.view.backgroundColor = UIColor.white
@@ -31,7 +31,7 @@ class TapBarViewController: UITabBarController {
         profileViewController.title = "Профиль"
         
         dealsViewController.tabBarItem = UITabBarItem(title: "Возвратный рейс", image: UIImage(named: "Deals"), tag: 0)
-        charterViewController.tabBarItem = UITabBarItem(title: "Charter", image: UIImage(named: "Charter"), tag: 1)
+        charterViewController.tabBarItem = UITabBarItem(title: "Чартер", image: UIImage(named: "Charter"), tag: 1)
         notificationsViewController.tabBarItem = UITabBarItem(title: "Уведомления", image: UIImage(named: "Notifications"), tag: 2)
         profileViewController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "Profile"), tag: 3)
         

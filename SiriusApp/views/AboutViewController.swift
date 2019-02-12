@@ -11,6 +11,29 @@ import UIKit
 class AboutViewController: UIViewController {
     
     let planeImageView = UIImageView()
+    
+    var aboutLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .left
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
+        label.sizeToFit()
+        label.text = ""
+        return label
+    }()
+    
+    let longText = """
+    Sirius Aero – одна из старейших российских компаний деловой авиации. Мы выполняем внутренние и международные чартерные авиаперевозки практически во все страны мира.
+    
+    Парк воздушных судов Sirius Aero – это современные иностранные бизнес джеты и российские бизнес лайнеры с премиальной конфигурацией салона. Всего в нашем флоте 9 типов самолётов. 
+    
+    Sirius Aero – самый крупный коммерческий оператор в Восточной Европе. Деятельность нашей компании соответствует российскому и международному воздушному законодательству. Это подтверждено соответствующими сертификатами и лицензиями.
+"""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +51,13 @@ class AboutViewController: UIViewController {
         planeImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         planeImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         planeImageView.image = UIImage(named: "Sirius-Aero_logo")
+        
+        aboutLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(aboutLabel)
+        aboutLabel.topAnchor.constraint(equalTo: planeImageView.bottomAnchor, constant: 10).isActive = true
+        aboutLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15).isActive = true
+        aboutLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15).isActive = true
+        aboutLabel.text = longText
     }
     
 

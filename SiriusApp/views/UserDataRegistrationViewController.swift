@@ -178,7 +178,8 @@ class UserDataRegistrationViewController: UIViewController, UITextFieldDelegate,
     @objc func nextButtonAction(sender: UIButton!) {
         
         let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let imageData =  (self.cyrcleImageView.image?.jpegData(compressionQuality: 0))
+        let imageData = self.cyrcleImageView.image?.resizeImageWithQoulity(image: self.cyrcleImageView.image!) //(self.cyrcleImageView.image?.jpegData(compressionQuality: 0))
+        print(imageData)
         let user = UserData()
         user.name = self.nameTextField.text!
         user.surName = self.surnameTextField.text!

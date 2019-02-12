@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -73,6 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.isHidden = true
         window!.rootViewController =  navigationController // WelcomeViewController()
         window!.makeKeyAndVisible()
+        FirebaseApp.configure()
         return true
     }
     

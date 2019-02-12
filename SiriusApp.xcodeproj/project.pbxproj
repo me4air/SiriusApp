@@ -35,6 +35,9 @@
 		A0D21C6F22119206005A5B37 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C6E22119206005A5B37 /* EnterViewController.swift */; };
 		A0D21C7122119644005A5B37 /* RePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C7022119644005A5B37 /* RePassViewController.swift */; };
 		A0D21C852212D744005A5B37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C842212D744005A5B37 /* AboutViewController.swift */; };
+		A0D21C8722131248005A5B37 /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0D21C8622131248005A5B37 /* GoogleService-Info-2.plist */; };
+		A0D21C8922131254005A5B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0D21C8822131254005A5B37 /* GoogleService-Info.plist */; };
+		A0D21C8B22131665005A5B37 /* ImageResizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C8A22131665005A5B37 /* ImageResizeExtension.swift */; };
 		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
 		A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */; };
 		A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E221BC51490098376C /* RequestViewController.swift */; };
@@ -78,6 +81,9 @@
 		A0D21C6E22119206005A5B37 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		A0D21C7022119644005A5B37 /* RePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePassViewController.swift; sourceTree = "<group>"; };
 		A0D21C842212D744005A5B37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A0D21C8622131248005A5B37 /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
+		A0D21C8822131254005A5B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0D21C8A22131665005A5B37 /* ImageResizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizeExtension.swift; sourceTree = "<group>"; };
 		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDealViewController.swift; sourceTree = "<group>"; };
 		A0EF35E221BC51490098376C /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		A02FDC6921AB09D9005ACFF1 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				A0D21C8622131248005A5B37 /* GoogleService-Info-2.plist */,
 				A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */,
 				A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */,
 				A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */,
@@ -155,8 +162,10 @@
 				A0BD405821A35108005062E9 /* views */,
 				A055447121A32AC3001A1B4B /* AppDelegate.swift */,
 				A07CF1E2220471C600EEC163 /* HideExstencion.swift */,
+				A0D21C8A22131665005A5B37 /* ImageResizeExtension.swift */,
 				A055447821A32AC5001A1B4B /* Assets.xcassets */,
 				A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */,
+				A0D21C8822131254005A5B37 /* GoogleService-Info.plist */,
 				A055447D21A32AC5001A1B4B /* Info.plist */,
 			);
 			path = SiriusApp;
@@ -272,6 +281,8 @@
 			files = (
 				A055447C21A32AC5001A1B4B /* LaunchScreen.storyboard in Resources */,
 				A055447921A32AC5001A1B4B /* Assets.xcassets in Resources */,
+				A0D21C8922131254005A5B37 /* GoogleService-Info.plist in Resources */,
+				A0D21C8722131248005A5B37 /* GoogleService-Info-2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,19 +320,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SiriusApp/Pods-SiriusApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -362,6 +375,7 @@
 				A0D21C852212D744005A5B37 /* AboutViewController.swift in Sources */,
 				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
 				A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */,
+				A0D21C8B22131665005A5B37 /* ImageResizeExtension.swift in Sources */,
 				A065BAE22209AD1500148067 /* FilterViewController.swift in Sources */,
 				A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */,
 				A07CF1E3220471C600EEC163 /* HideExstencion.swift in Sources */,

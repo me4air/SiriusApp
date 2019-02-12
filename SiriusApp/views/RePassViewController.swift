@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import TextFieldEffects
 
 class RePassViewController: UIViewController, UITextFieldDelegate {

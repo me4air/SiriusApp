@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import Realm
 import RealmSwift
 
@@ -43,14 +42,9 @@ class DealsViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationItem.setRightBarButton(barBtn, animated: true)
         self.view.backgroundColor = UIColor.white
         //self.tabBarController?.tabBar.isHidden = false
-        print(AlamofireVersionNumber)
         setupCollectionView()
      
-        AF.request("https://sirius-aero.ru/app/getListFlights")
-            .responseJSON{ response in
-            print(response)
-            
-        }
+   
         // Do any additional setup after loading the view.
     }
     
