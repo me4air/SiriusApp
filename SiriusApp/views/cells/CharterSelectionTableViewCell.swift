@@ -149,7 +149,7 @@ class CharterSelectionTableViewCell: UITableViewCell {
         dateButton.imageButton.image = UIImage(named: "calendar")!.withRenderingMode(.alwaysTemplate)
         dateButton.smallLabel.text = "Выбрать дату"
         
-       dateButton.addTarget(self, action: #selector(dateButtonAction), for: .touchUpInside)
+        dateButton.addTarget(self, action: #selector(dateButtonAction), for: .touchUpInside)
         
 
         

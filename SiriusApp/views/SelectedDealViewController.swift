@@ -8,11 +8,13 @@
 
 import UIKit
 
-class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
+class SelectedDealViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+ 
+    
     
     let scrollView : UIScrollView = {
         let view = UIScrollView()
-        view.contentSize.height = 933-55
+        view.contentSize.height = 1033-55
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return view
@@ -22,14 +24,15 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
     let imageSeparator = UIImageView()
     
     let clockImage = UIImageView()
+    var passPicker = UIPickerView()
     
     let sliderPageController = UIPageControl()
     let sliderScrollView = UIScrollView()
     var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     
     let imageArray = ["plane","plane2","plane3"]
-    
-    
+
+    var passengersNumber = 1
     
     let leftBorderView: UIView = {
         let view = UIView()
@@ -54,6 +57,13 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     let separatorLine: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        view.backgroundColor = UIColor(displayP3Red: 0.1, green: 0.22, blue: 0.38, alpha: 0.2)
+        return view
+    }()
+    
+    let separatorLineSecond: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         view.backgroundColor = UIColor(displayP3Red: 0.1, green: 0.22, blue: 0.38, alpha: 0.2)
@@ -187,7 +197,7 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.sizeToFit()
-        label.text = "время полета 35 минут"
+        label.text = "Время полета 35 минут"
         return label
     }()
     
@@ -369,7 +379,7 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.sizeToFit()
-        label.text = "$ 3 200"
+        label.text = "Выберите количество пассажиров"
         return label
     }()
     
@@ -377,16 +387,24 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
     let byButton: UIButton = {
         let button = UIButton()
         button.setTitle("Заказать рейс", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.6549019608, green: 0.7215686275, blue: 0.8156862745, alpha: 1)
         button.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return button
     }()
     
     
     
+    let passangersButton: LongDealUIButton = {
+        let button = LongDealUIButton()
+        button.smallLabel.text =  "Выбрать количество пассажиров"
+        button.imageButton.image = UIImage(named: "seat")
+        button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        button.layer.borderColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
+        button.layer.borderWidth = 1
+       
     
-    
-    
+        return button
+    }()
     
     
     
@@ -395,10 +413,53 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         self.navigationItem.title = "О перелете"
         self.navigationItem.largeTitleDisplayMode = .never
         //self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = .white
+        self.hideKeyboardWhenTappedAround()
         setupScrollView()
         // Do any additional setup after loading the view.
     }
     
+    
+    let pickerSetas = ["1","2","3","4","5","6","7","8"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerSetas.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerSetas[row]
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.passangersButton.smallLabel.text = "Количество пассажиров: " + pickerSetas[row]
+        passengersNumber = row+1
+        self.coastLabel.text = "$ " + String((row+1)*500)
+        if !(byButton.isEnabled){
+            self.byButton.isEnabled = true
+            self.byButton.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+            
+        }
+    }
+    
+    @objc func passangerAction(sender: UIButton!) {
+        passangersButton.smallLabel.isEnabled = true
+        self.passangersButton.smallLabel.text = releseDatePickerView()
+        passangersButton.smallLabel.becomeFirstResponder()
+    }
+    
+    func releseDatePickerView() -> String{
+        var result = "Количество пассажиров: "
+        passPicker.delegate = self
+        passangersButton.smallLabel.inputView = passPicker
+        result += String(passPicker.selectedRow(inComponent: 0)+1)
+        return result
+    }
     
     @objc func buttonAction(sender: UIButton!) {
         let svc = RequestViewController()
@@ -410,13 +471,23 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         sliderPageController.currentPage = Int(pageNumber)
     }
     
+    @objc func doneButtonAction(sender: UIButton!) {
+        self.view.endEditing(true)
+        self.passangersButton.smallLabel.text = "Количество пассажиров: " + String(passengersNumber)
+        self.coastLabel.text = "$ " + String((passengersNumber)*500)
+        if !(byButton.isEnabled){
+            self.byButton.isEnabled = true
+            self.byButton.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.2196078431, blue: 0.3843137255, alpha: 1)
+            
+        }
+    }
     
     func setupScrollView(){
-        view.addSubview(scrollView)
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        self.view.addSubview(scrollView)
+        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 90)
@@ -570,12 +641,7 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         infoBlockSecond.topAnchor.constraint(equalTo: infoBlockFirst.bottomAnchor, constant: 52).isActive = true
         infoBlockSecond.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        scrollView.addSubview(infoBlockButton)
-        infoBlockButton.translatesAutoresizingMaskIntoConstraints = false
-        infoBlockButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        infoBlockButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        infoBlockButton.topAnchor.constraint(equalTo: infoBlockSecond.bottomAnchor, constant: 74).isActive = true
-        infoBlockButton.heightAnchor.constraint(equalToConstant: 210).isActive = true
+
         
         scrollView.addSubview(classStaticLabel)
         classStaticLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -601,11 +667,6 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         distanceStaticLabel.topAnchor.constraint(equalTo: infoBlockSecond.bottomAnchor, constant: 16).isActive = true
         distanceStaticLabel.widthAnchor.constraint(equalToConstant: 180).isActive = true
         
-        scrollView.addSubview(coastLabel)
-        coastLabel.translatesAutoresizingMaskIntoConstraints = false
-        coastLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        coastLabel.topAnchor.constraint(equalTo: infoBlockButton.topAnchor, constant: 25).isActive = true
-        coastLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width-20).isActive = true
         
         scrollView.addSubview(classLabel)
         classLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -631,6 +692,38 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         distanceLabel.rightAnchor.constraint(equalTo: infoBlockSecond.rightAnchor, constant: 10).isActive = true
         distanceLabel.topAnchor.constraint(equalTo: infoBlockSecond.bottomAnchor, constant: 17).isActive = true
         
+        scrollView.addSubview(separatorLineSecond)
+        separatorLineSecond.translatesAutoresizingMaskIntoConstraints = false
+        separatorLineSecond.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        separatorLineSecond.widthAnchor.constraint(equalToConstant: view.frame.width-32).isActive = true
+        separatorLineSecond.topAnchor.constraint(equalTo: distanceLabel.bottomAnchor, constant: 30).isActive = true
+        separatorLineSecond.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        passangersButton.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(passangersButton)
+        passangersButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        passangersButton.layer.cornerRadius = 6
+        passangersButton.topAnchor.constraint(equalTo: separatorLineSecond.bottomAnchor, constant: 25).isActive = true
+        passangersButton.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor).isActive = true
+        passangersButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        passangersButton.leftAnchor.constraint(equalTo: separatorLineSecond.leftAnchor).isActive = true
+        passangersButton.rightAnchor.constraint(equalTo: separatorLineSecond.rightAnchor).isActive = true
+        passangersButton.addTarget(self, action: #selector(passangerAction), for: .touchUpInside)
+        
+        scrollView.addSubview(infoBlockButton)
+        infoBlockButton.translatesAutoresizingMaskIntoConstraints = false
+        infoBlockButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        infoBlockButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        infoBlockButton.topAnchor.constraint(equalTo: passangersButton.bottomAnchor, constant: 25).isActive = true
+        infoBlockButton.heightAnchor.constraint(equalToConstant: 210).isActive = true
+        
+        scrollView.addSubview(coastLabel)
+        coastLabel.translatesAutoresizingMaskIntoConstraints = false
+        coastLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        coastLabel.topAnchor.constraint(equalTo: infoBlockButton.topAnchor, constant: 25).isActive = true
+       
+        coastLabel.widthAnchor.constraint(equalToConstant: self.view.frame.width-50).isActive = true
+        
         byButton.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         byButton.layer.cornerRadius = 25
         scrollView.addSubview(byButton)
@@ -640,7 +733,15 @@ class SelectedDealViewController: UIViewController, UIScrollViewDelegate {
         byButton.widthAnchor.constraint(equalToConstant: view.frame.width - 100).isActive = true
         byButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         byButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        byButton.isEnabled = false
         
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        
+        passangersButton.smallLabel.inputAccessoryView = toolbar
         
     }
     

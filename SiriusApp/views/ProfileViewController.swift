@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     let profileBGImage = UIImageView()
-    let profileAvatarImage = UIImageView()
+    var profileAvatarImage = UIImageView()
     let menuTableView = UITableView()
     
     var userNameLabel: UILabel = {
@@ -26,7 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.sizeToFit()
-        label.text = "Владислав Иванов"
+        label.text = "Имя Фамилия"
         return label
     }()
     
@@ -41,16 +43,39 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateWithRealm()
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+         print("0")
+        case 1:
+         print("1")
+        case 2:
+         print("2")
+        case 3:
+         print("3")
+        case 4:
+         print("4")
+        case 5:
+         print("5")
+        self.view.window?.rootViewController!.dismiss(animated: true, completion: nil)
+        default:
+            print("ERROR")
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,7 +87,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return cell
         case 1:
             cell.menuLabel.text = "Уведомления"
-            cell.menuImage.image = UIImage(named: "dest")
+            cell.menuImage.image = UIImage(named: "bell")
             return cell
         case 2:
             cell.menuLabel.text = "Сменить пароль"
@@ -107,16 +132,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
         self.present(actionSheet, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
         profileAvatarImage.image = image
-        
         picker.dismiss(animated: true, completion: nil)
+    
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -124,7 +147,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    func updateWithRealm(){
+        let realm = try! Realm()
+        let userData = realm.objects(UserData.self).first
+        var imageData = Data()
+        let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        if let docDirectory = documentDirectories.first{
+            let fileURL = docDirectory.appendingPathComponent("avatar")
+            do {
+                imageData = try Data(contentsOf: fileURL)
+            } catch {
+                print(error)
+            }
+        } else { return }
+        if let avatar = UIImage(data: imageData) {
+            profileAvatarImage.image = avatar }
+        if let name = userData?.name {
+            userNameLabel.text = name + " " + (userData?.surName)!
+        }
+    }
+    
     func setupLayout(){
+        
+    
+     
+        
         profileBGImage.translatesAutoresizingMaskIntoConstraints = false
         profileBGImage.image = UIImage(named: "ProfileBG")
         self.view.addSubview(profileBGImage)
@@ -161,6 +208,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         userNameLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10).isActive = true
         userNameLabel.topAnchor.constraint(equalTo: profileAvatarImage.bottomAnchor, constant: 10).isActive = true
         userNameLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+      //
         
         menuTableView.translatesAutoresizingMaskIntoConstraints = false
         menuTableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")

@@ -94,6 +94,8 @@ class DealsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    var planeImage = UIImageView()
+    
     var planePlacesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -203,7 +205,7 @@ class DealsCollectionViewCell: UICollectionViewCell {
         gradientLayer.colors = [#colorLiteral(red: 0.1176470588, green: 0.2784313725, blue: 0.4784313725, alpha: 1) as CGColor, #colorLiteral(red: 0.0862745098, green: 0.3647058824, blue: 0.6, alpha: 1) as CGColor]
         pictureView.layer.addSublayer(gradientLayer)
         
-        let planeImage = UIImageView()
+       // let planeImage = UIImageView()
         planeImage.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: 166)
         planeImage.clipsToBounds = true
         planeImage.image = UIImage(named: "plane")

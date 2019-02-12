@@ -67,7 +67,18 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    @objc func doneButtonAction(sender: UIButton!) {
+        self.view.endEditing(true)
+        if validation(for: chartersArray.last!) {
+            turnOnControls()
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
         if indexPath.section == 0 {
             let cell = charterTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharterSelectionTableViewCell
             cell.delegate = self
@@ -76,6 +87,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.timeButton.smallLabel.text = time
                 cell.timeButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
                 cell.timeButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
             } else {
                 cell.resetTime()
             }
@@ -83,6 +95,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.dateButton.smallLabel.text = date
                 cell.dateButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
                 cell.dateButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
             } else {
                 
                 cell.resetDate()
@@ -91,6 +104,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.passengerButton.smallLabel.text = pass
                 cell.passengerButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
                 cell.passengerButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
             } else {
                 cell.resetPass()
             }
@@ -130,7 +144,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
             datePicker?.datePickerMode = .date
             datePicker!.locale = NSLocale.init(localeIdentifier: "ru") as Locale
             datePicker?.minimumDate = Date()
-            datePicker?.maximumDate = Date().addingTimeInterval(60 * 60 * 24 * 180)
+            datePicker?.maximumDate = Date().addingTimeInterval(60 * 60 * 24 * 360 * 5)
             sender.dateButton.smallLabel.inputView = datePicker
             let dateformatter = DateFormatter()
             dateformatter.dateFormat = "dd.MM.yy"
@@ -180,9 +194,9 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = self.charterTableView.cellForRow(at: indexPath) as! CharterSelectionTableViewCell
         cell.passengerButton.smallLabel.text = pickerSetas[row]
         chartersArray[indexPath.row].passanger = pickerSetas[row]
-      /*  if validation(for: chartersArray.last!) {
-            turnOnControls()
-        } */
+        /*  if validation(for: chartersArray.last!) {
+         turnOnControls()
+         } */
     }
     
     
@@ -199,6 +213,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
+    
     @objc func datePickerValueChanged(picker : UIDatePicker){
         
         let dateformatter = DateFormatter()
@@ -208,7 +223,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = self.charterTableView.cellForRow(at: indexPath) as! CharterSelectionTableViewCell
         cell.dateButton.smallLabel.text = result
         chartersArray[(datePicker?.tag)!].date = result
-       
+        
     }
     
     @objc func timePickerValueChanged(picker : UIDatePicker){
@@ -220,7 +235,7 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = self.charterTableView.cellForRow(at: indexPath) as! CharterSelectionTableViewCell
         cell.timeButton.smallLabel.text = result
         chartersArray[(datePicker?.tag)!].time = result
-     
+        
     }
     
     
@@ -229,41 +244,65 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func CharterSelectionTableViewCellDidTapTimeButton(_ sender: CharterSelectionTableViewCell) {
         print("Time taped")
+        
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        
         sender.timeButton.smallLabel.isUserInteractionEnabled = true
         sender.timeButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.timeButton.smallLabel.tintColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.timeButton.smallLabel.text = releseDatePickerView(sender: sender, type: "Time")
         chartersArray[sender.tag].time = sender.timeButton.smallLabel.text
         sender.timeButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        sender.timeButton.smallLabel.inputAccessoryView = toolbar
         sender.timeButton.smallLabel.becomeFirstResponder()
         
     }
     
     func CharterSelectionTableViewCellDidTapDateButton(_ sender: CharterSelectionTableViewCell) {
         print("Date taped")
+        
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        
         sender.dateButton.smallLabel.isUserInteractionEnabled = true
         sender.dateButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.dateButton.smallLabel.tintColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.dateButton.smallLabel.text = releseDatePickerView(sender: sender, type: "Date")
         chartersArray[sender.tag].date = sender.dateButton.smallLabel.text
-      /*  if validation(for: chartersArray.last!) {
-            turnOnControls()
-        } */
+        /*  if validation(for: chartersArray.last!) {
+         turnOnControls()
+         } */
         sender.dateButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        sender.dateButton.smallLabel.inputAccessoryView = toolbar
         sender.dateButton.smallLabel.becomeFirstResponder()
     }
     
     func CharterSelectionTableViewCellDidTapPassengerButton(_ sender: CharterSelectionTableViewCell) {
         print("Pass taped")
+        
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        
         sender.passengerButton.smallLabel.isUserInteractionEnabled = true
         sender.passengerButton.backgroundColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.passengerButton.smallLabel.tintColor = #colorLiteral(red: 0, green: 0.6352941176, blue: 1, alpha: 1)
         sender.passengerButton.smallLabel.text = releseDatePickerView(sender: sender, type: "Pass")
         chartersArray[sender.tag].passanger = sender.passengerButton.smallLabel.text
-      /*  if validation(for: chartersArray.last!) {
-            turnOnControls()
-        } */
+        /*  if validation(for: chartersArray.last!) {
+         turnOnControls()
+         } */
         sender.passengerButton.imageButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        sender.passengerButton.smallLabel.inputAccessoryView = toolbar
         sender.passengerButton.smallLabel.becomeFirstResponder()
     }
     
@@ -350,8 +389,8 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @objc func buttonAction(sender: UIButton!) {
         print(chartersArray)
-         let svc = RequestViewController()
-         navigationController?.pushViewController(svc, animated: true)
+        let svc = RequestViewController()
+        navigationController?.pushViewController(svc, animated: true)
         self.chartersArray = [CharterInformation(date: nil, time: nil, passanger: nil, departureAirport: nil, arivalAirport: nil)]
         let controlIndex = IndexPath(row: 0, section: 1)
         let controlCell = self.charterTableView.cellForRow(at: controlIndex) as! CharterControllTableViewCell
@@ -386,10 +425,10 @@ class CharterViewController: UIViewController, UITableViewDataSource, UITableVie
         let controlIndex = IndexPath(row: 0, section: 1)
         let controlCell = self.charterTableView.cellForRow(at: controlIndex) as! CharterControllTableViewCell
         if !(controlCell.addButton.isEnabled){
-        controlCell.activateAdd()
-        controlCell.activateBack()
-        activateRequestButton()
-        self.charterTableView.reloadData()
+            controlCell.activateAdd()
+            controlCell.activateBack()
+            activateRequestButton()
+            self.charterTableView.reloadData()
         }
     }
     

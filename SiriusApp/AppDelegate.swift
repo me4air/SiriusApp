@@ -58,7 +58,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       //  tabBarController.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
        
         window!.rootViewController = tabBarController */
-        window!.rootViewController = WelcomeViewController()
+        
+        let welcomeViewController = WelcomeViewController() as UIViewController
+        welcomeViewController.view.backgroundColor = UIColor.white
+        welcomeViewController.title = ""
+        
+        let navigationController = UINavigationController(rootViewController: welcomeViewController)
+        navigationController.navigationBar.prefersLargeTitles = false
+        navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.07843137255, green: 0.2039215686, blue: 0.3607843137, alpha: 1)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController.navigationBar.largeTitleTextAttributes = textAttributes
+        navigationController.navigationBar.titleTextAttributes = textAttributes
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.isHidden = true
+        window!.rootViewController =  navigationController // WelcomeViewController()
         window!.makeKeyAndVisible()
         return true
     }

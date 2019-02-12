@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+import Realm
+import RealmSwift
+
 
 class DealsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     let cellId = "dealsCell"
     
-    let tempDeals = [DealInformation(departureCity: "Москва", destinationCity: "Рига", date: "14 Сентября", plane: "Howker 7000000000", coast: "$ 3 200", time: "08:47", seats: "7 мест"),DealInformation(departureCity: "Таллин", destinationCity: "Сан-Франциско", date: "24 Ноября", plane: "Howker 700", coast: "$ 5 200", time: "08:47", seats: "7 мест"),DealInformation(departureCity: "Санкт-Питербургский", destinationCity: "Рио-да-Жанейро", date: "01 Декабря", plane: "Howker 700", coast: "$ 200", time: "08:47", seats: "7 мест"),DealInformation(departureCity: "Москва", destinationCity: "Нижний Переяславль", date: "08 Марта", plane: "Howker 700", coast: "$ 3 200", time: "08:47", seats: "7 мест"),DealInformation(departureCity: "Вышний волочок", destinationCity: "Рим", date: "23 Апреля", plane: "Howker 700", coast: "$ 13 200", time: "08:47", seats: "7 мест")]
+    let tempDeals = [DealInformation(departureCity: "Москва", destinationCity: "Рига", date: "14 Сентября", plane: "Howker 7000000000", coast: "$ 3 200", time: "08:47", seats: "7 мест", image: "plane"),DealInformation(departureCity: "Таллин", destinationCity: "Сан-Франциско", date: "24 Ноября", plane: "Howker 700", coast: "$ 5 200", time: "08:47", seats: "7 мест", image: "plane2"),DealInformation(departureCity: "Санкт-Питербург", destinationCity: "Рио", date: "01 Декабря", plane: "Howker 700", coast: "$ 200", time: "08:47", seats: "7 мест", image: "plane3"),DealInformation(departureCity: "Москва", destinationCity: "Нижний Новгород", date: "08 Марта", plane: "Howker 700", coast: "$ 3 200", time: "08:47", seats: "7 мест", image: "plane4"),DealInformation(departureCity: "Вышний волочок", destinationCity: "Рим", date: "23 Апреля", plane: "Howker 700", coast: "$ 13 200", time: "08:47", seats: "7 мест", image: "plane3")]
     
     
     let dealsCollectionView: UICollectionView = {
@@ -39,7 +43,14 @@ class DealsViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationItem.setRightBarButton(barBtn, animated: true)
         self.view.backgroundColor = UIColor.white
         //self.tabBarController?.tabBar.isHidden = false
+        print(AlamofireVersionNumber)
         setupCollectionView()
+     
+        AF.request("https://sirius-aero.ru/app/getListFlights")
+            .responseJSON{ response in
+            print(response)
+            
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -51,6 +62,8 @@ class DealsViewController: UIViewController, UICollectionViewDelegate, UICollect
     
    @objc func pressed() {
         print("Pressed")
+        let svc = FilterViewController()
+        navigationController?.pushViewController(svc, animated: true)
 
     }
     
@@ -87,6 +100,7 @@ class DealsViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.departureLabel.text = tempDeals[indexPath.row].departureCity
         cell.coastLabel.text = tempDeals[indexPath.row].coast
         cell.dateLabel.text = tempDeals[indexPath.row].date
+        cell.planeImage.image = UIImage(named: tempDeals[indexPath.row].image)
         return cell
     }
     

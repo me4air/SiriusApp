@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A003478521BD6429008682AD /* SmallCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003478421BD6429008682AD /* SmallCharterUIButton.swift */; };
+		8CA92333F34FAA656D9FDDBC /* Pods_SiriusApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FC6C854E091EC1F6B32D7D /* Pods_SiriusApp.framework */; };
+		A003478521BD6429008682AD /* LongDealUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003478421BD6429008682AD /* LongDealUIButton.swift */; };
+		A0083F1922045245002D0CE6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0083F1822045245002D0CE6 /* RegistrationViewController.swift */; };
 		A01D157D21C68CEC00E0BD56 /* AirportSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */; };
 		A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */; };
 		A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */; };
@@ -18,12 +20,20 @@
 		A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */; };
 		A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */; };
 		A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */; };
+		A065BAE22209AD1500148067 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065BAE12209AD1500148067 /* FilterViewController.swift */; };
+		A065BAE42209E94500148067 /* RadioUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065BAE32209E94500148067 /* RadioUIButton.swift */; };
+		A074FA3F22115683003ECBCB /* UserDataRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A074FA3E22115683003ECBCB /* UserDataRegistrationViewController.swift */; };
 		A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */; };
+		A07CF1E3220471C600EEC163 /* HideExstencion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CF1E2220471C600EEC163 /* HideExstencion.swift */; };
+		A086EFC721F49B3E005D5064 /* SmallCharterUIButton copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086EFC621F49B3D005D5064 /* SmallCharterUIButton copy.swift */; };
 		A0A79E4221CFA7EB00ED7E95 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A79E4121CFA7EB00ED7E95 /* NotificationTableViewCell.swift */; };
 		A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */; };
 		A0B5192821CFF39200D833EF /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */; };
 		A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BD405921A3523D005062E9 /* DealsViewController.swift */; };
 		A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C439CA21AC84BF002E1149 /* FlightStruct.swift */; };
+		A0D21C6B22117988005A5B37 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C6A22117988005A5B37 /* UserData.swift */; };
+		A0D21C6F22119206005A5B37 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C6E22119206005A5B37 /* EnterViewController.swift */; };
+		A0D21C7122119644005A5B37 /* RePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D21C7022119644005A5B37 /* RePassViewController.swift */; };
 		A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */; };
 		A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */; };
 		A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF35E221BC51490098376C /* RequestViewController.swift */; };
@@ -35,7 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A003478421BD6429008682AD /* SmallCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCharterUIButton.swift; sourceTree = "<group>"; };
+		15FC6C854E091EC1F6B32D7D /* Pods_SiriusApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiriusApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31D75697F74BE525E08906F4 /* Pods-SiriusApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiriusApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiriusApp/Pods-SiriusApp.release.xcconfig"; sourceTree = "<group>"; };
+		50C9C15076D55E5723F9D18B /* Pods-SiriusApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiriusApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiriusApp/Pods-SiriusApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A003478421BD6429008682AD /* LongDealUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongDealUIButton.swift; sourceTree = "<group>"; };
+		A0083F1822045245002D0CE6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSearchViewController.swift; sourceTree = "<group>"; };
 		A02FDC6721AB09D2005ACFF1 /* DealsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A050C2E921C6A66C004FC630 /* airportSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airportSearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -48,12 +62,20 @@
 		A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCharterUIButton.swift; sourceTree = "<group>"; };
 		A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCharterUIButton.swift; sourceTree = "<group>"; };
 		A05B0A9021BD7DE1001A8EBF /* CharterControllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterControllTableViewCell.swift; sourceTree = "<group>"; };
+		A065BAE12209AD1500148067 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A065BAE32209E94500148067 /* RadioUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioUIButton.swift; sourceTree = "<group>"; };
+		A074FA3E22115683003ECBCB /* UserDataRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataRegistrationViewController.swift; sourceTree = "<group>"; };
 		A07C483B21C6BAEF005DC16E /* CharterStruckt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterStruckt.swift; sourceTree = "<group>"; };
+		A07CF1E2220471C600EEC163 /* HideExstencion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideExstencion.swift; sourceTree = "<group>"; };
+		A086EFC621F49B3D005D5064 /* SmallCharterUIButton copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallCharterUIButton copy.swift"; sourceTree = "<group>"; };
 		A0A79E4121CFA7EB00ED7E95 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStruct.swift; sourceTree = "<group>"; };
 		A0B5192721CFF39200D833EF /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		A0BD405921A3523D005062E9 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		A0C439CA21AC84BF002E1149 /* FlightStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStruct.swift; sourceTree = "<group>"; };
+		A0D21C6A22117988005A5B37 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		A0D21C6E22119206005A5B37 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		A0D21C7022119644005A5B37 /* RePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePassViewController.swift; sourceTree = "<group>"; };
 		A0DBDADB21BD571800A20F25 /* CharterSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDealViewController.swift; sourceTree = "<group>"; };
 		A0EF35E221BC51490098376C /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
@@ -69,12 +91,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA92333F34FAA656D9FDDBC /* Pods_SiriusApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E646E6707513312B2D22B7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15FC6C854E091EC1F6B32D7D /* Pods_SiriusApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		694FFF1B4EF62FA9CFFB0D84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50C9C15076D55E5723F9D18B /* Pods-SiriusApp.debug.xcconfig */,
+				31D75697F74BE525E08906F4 /* Pods-SiriusApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A02FDC6921AB09D9005ACFF1 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +133,8 @@
 			children = (
 				A055447021A32AC3001A1B4B /* SiriusApp */,
 				A055446F21A32AC3001A1B4B /* Products */,
+				694FFF1B4EF62FA9CFFB0D84 /* Pods */,
+				5E646E6707513312B2D22B7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +152,7 @@
 				A071AC2221B68444006C22D0 /* model */,
 				A0BD405821A35108005062E9 /* views */,
 				A055447121A32AC3001A1B4B /* AppDelegate.swift */,
+				A07CF1E2220471C600EEC163 /* HideExstencion.swift */,
 				A055447821A32AC5001A1B4B /* Assets.xcassets */,
 				A055447A21A32AC5001A1B4B /* LaunchScreen.storyboard */,
 				A055447D21A32AC5001A1B4B /* Info.plist */,
@@ -122,7 +165,9 @@
 			children = (
 				A05B0A8C21BD7404001A8EBF /* BigCharterUIButton.swift */,
 				A05B0A8E21BD7C9B001A8EBF /* ControlCharterUIButton.swift */,
-				A003478421BD6429008682AD /* SmallCharterUIButton.swift */,
+				A086EFC621F49B3D005D5064 /* SmallCharterUIButton copy.swift */,
+				A065BAE32209E94500148067 /* RadioUIButton.swift */,
+				A003478421BD6429008682AD /* LongDealUIButton.swift */,
 			);
 			path = "castom buttons";
 			sourceTree = "<group>";
@@ -130,6 +175,7 @@
 		A071AC2221B68444006C22D0 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				A0D21C6A22117988005A5B37 /* UserData.swift */,
 				A0C439CA21AC84BF002E1149 /* FlightStruct.swift */,
 				A0A79E4321CFCF1500ED7E95 /* NotificationStruct.swift */,
 				A050C2EB21C6B012004FC630 /* AirportStruckt.swift */,
@@ -147,9 +193,14 @@
 				A0BD405921A3523D005062E9 /* DealsViewController.swift */,
 				A0F4418921A82E35004AE086 /* CharterViewController.swift */,
 				A0DFA22721B44F640048E742 /* SelectedDealViewController.swift */,
+				A065BAE12209AD1500148067 /* FilterViewController.swift */,
 				A0EF35E221BC51490098376C /* RequestViewController.swift */,
 				A01D157C21C68CEC00E0BD56 /* AirportSearchViewController.swift */,
 				A0EF35E421BC6FD10098376C /* WelcomeViewController.swift */,
+				A0D21C6E22119206005A5B37 /* EnterViewController.swift */,
+				A0D21C7022119644005A5B37 /* RePassViewController.swift */,
+				A0083F1822045245002D0CE6 /* RegistrationViewController.swift */,
+				A074FA3E22115683003ECBCB /* UserDataRegistrationViewController.swift */,
 				A0F4418B21A82E48004AE086 /* ProfileViewController.swift */,
 				A0F4418D21A82E53004AE086 /* NotifecationsViewController.swift */,
 			);
@@ -163,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A055448021A32AC5001A1B4B /* Build configuration list for PBXNativeTarget "SiriusApp" */;
 			buildPhases = (
+				14AD577F24DCDD4A01B11D28 /* [CP] Check Pods Manifest.lock */,
 				A055446A21A32AC3001A1B4B /* Sources */,
 				A055446B21A32AC3001A1B4B /* Frameworks */,
 				A055446C21A32AC3001A1B4B /* Resources */,
+				2A6C82E0A7824018C7B47128 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +274,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14AD577F24DCDD4A01B11D28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SiriusApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A6C82E0A7824018C7B47128 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SiriusApp/Pods-SiriusApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiriusApp/Pods-SiriusApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A055446A21A32AC3001A1B4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -228,24 +334,33 @@
 			files = (
 				A0A79E4221CFA7EB00ED7E95 /* NotificationTableViewCell.swift in Sources */,
 				A050C2EC21C6B012004FC630 /* AirportStruckt.swift in Sources */,
+				A0D21C7122119644005A5B37 /* RePassViewController.swift in Sources */,
 				A0B5192821CFF39200D833EF /* ProfileTableViewCell.swift in Sources */,
 				A0C439CB21AC84BF002E1149 /* FlightStruct.swift in Sources */,
 				A05B0A8D21BD7404001A8EBF /* BigCharterUIButton.swift in Sources */,
 				A0EF35E521BC6FD10098376C /* WelcomeViewController.swift in Sources */,
 				A0BD405A21A3523D005062E9 /* DealsViewController.swift in Sources */,
 				A0DFA22821B44F640048E742 /* SelectedDealViewController.swift in Sources */,
+				A0D21C6F22119206005A5B37 /* EnterViewController.swift in Sources */,
 				A0DBDADC21BD571800A20F25 /* CharterSelectionTableViewCell.swift in Sources */,
-				A003478521BD6429008682AD /* SmallCharterUIButton.swift in Sources */,
+				A086EFC721F49B3E005D5064 /* SmallCharterUIButton copy.swift in Sources */,
+				A003478521BD6429008682AD /* LongDealUIButton.swift in Sources */,
 				A0F4418E21A82E53004AE086 /* NotifecationsViewController.swift in Sources */,
 				A055447221A32AC3001A1B4B /* AppDelegate.swift in Sources */,
+				A065BAE42209E94500148067 /* RadioUIButton.swift in Sources */,
 				A0EF35E321BC51490098376C /* RequestViewController.swift in Sources */,
+				A0083F1922045245002D0CE6 /* RegistrationViewController.swift in Sources */,
 				A01D157D21C68CEC00E0BD56 /* AirportSearchViewController.swift in Sources */,
 				A0F4418C21A82E48004AE086 /* ProfileViewController.swift in Sources */,
+				A0D21C6B22117988005A5B37 /* UserData.swift in Sources */,
 				A050C2EA21C6A66C004FC630 /* airportSearchTableViewCell.swift in Sources */,
+				A074FA3F22115683003ECBCB /* UserDataRegistrationViewController.swift in Sources */,
 				A0EF35E721BC70670098376C /* TapBarViewController.swift in Sources */,
 				A05B0A8F21BD7C9B001A8EBF /* ControlCharterUIButton.swift in Sources */,
 				A0A79E4421CFCF1600ED7E95 /* NotificationStruct.swift in Sources */,
+				A065BAE22209AD1500148067 /* FilterViewController.swift in Sources */,
 				A07C483C21C6BAEF005DC16E /* CharterStruckt.swift in Sources */,
+				A07CF1E3220471C600EEC163 /* HideExstencion.swift in Sources */,
 				A02FDC6821AB09D2005ACFF1 /* DealsCollectionViewCell.swift in Sources */,
 				A05B0A9121BD7DE1001A8EBF /* CharterControllTableViewCell.swift in Sources */,
 				A0F4418A21A82E35004AE086 /* CharterViewController.swift in Sources */,
@@ -386,17 +501,18 @@
 		};
 		A055448121A32AC5001A1B4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C9C15076D55E5723F9D18B /* Pods-SiriusApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N92YQJ4YN3;
+				DEVELOPMENT_TEAM = VSJDN2P6Q5;
 				INFOPLIST_FILE = SiriusApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me4air.SiriusApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sirius-aero.SiriusApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -405,17 +521,18 @@
 		};
 		A055448221A32AC5001A1B4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D75697F74BE525E08906F4 /* Pods-SiriusApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N92YQJ4YN3;
+				DEVELOPMENT_TEAM = VSJDN2P6Q5;
 				INFOPLIST_FILE = SiriusApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.me4air.SiriusApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sirius-aero.SiriusApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

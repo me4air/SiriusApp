@@ -35,6 +35,7 @@ class AirportSearchViewController: UIViewController, UITableViewDelegate, UITabl
         self.definesPresentationContext = true
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
+        self.navigationController?.navigationBar.tintColor = .white
        
         setupLayout()
 

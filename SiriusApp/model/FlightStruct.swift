@@ -16,4 +16,5 @@ struct DealInformation {
     let coast: String
     let time: String
     let seats: String
+    let image: String
 }
